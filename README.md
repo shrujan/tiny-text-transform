@@ -1,5 +1,4 @@
-# tiny-text-transform
-# Tiny Text Transform
+# Tiny Text Transform (tiny-text-transform)
 
 A tiny, zero-dependency TypeScript/JavaScript library for common text case transformations.
 
