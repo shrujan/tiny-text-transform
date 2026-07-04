@@ -17,7 +17,6 @@
     "dev": "tsup src/index.ts --watch",
     "test": "echo \"No tests yet\""
   },
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shrujan/tiny-text-transform.git"
@@ -43,6 +42,6 @@
   "devDependencies": {
     "@types/node": "^26.1.0",
     "tsup": "^8.5.1",
-    "typescript": "^6.0.3"
+    "typescript": "^5.9.3"
   }
 }
