@@ -68,3 +68,9 @@ export function makeAlphanumeric(text: string) {
 
   return text.replace(/[^a-zA-Z0-9 ]/g, '');
 }
+
+export function makeTextReversed(text: string): string {
+    if (!text || typeof text !== 'string') return text;
+    
+    return text.split("").reverse().join("");
+}

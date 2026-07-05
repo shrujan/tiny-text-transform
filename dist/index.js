@@ -47,6 +47,10 @@ function makeAlphanumeric(text) {
   if (!text || typeof text !== "string") return text;
   return text.replace(/[^a-zA-Z0-9 ]/g, "");
 }
+function makeTextReversed(text) {
+  if (!text || typeof text !== "string") return text;
+  return text.split("").reverse().join("");
+}
 export {
   makeAllLowerCase,
   makeAllUpperCase,
@@ -58,5 +62,6 @@ export {
   makeSentenceCase,
   makeSingleSpaced,
   makeSnakeCase,
+  makeTextReversed,
   makeTitleCase
 };

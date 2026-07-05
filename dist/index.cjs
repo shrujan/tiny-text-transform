@@ -30,6 +30,7 @@ __export(index_exports, {
   makeSentenceCase: () => makeSentenceCase,
   makeSingleSpaced: () => makeSingleSpaced,
   makeSnakeCase: () => makeSnakeCase,
+  makeTextReversed: () => makeTextReversed,
   makeTitleCase: () => makeTitleCase
 });
 module.exports = __toCommonJS(index_exports);
@@ -81,6 +82,10 @@ function makeAlphanumeric(text) {
   if (!text || typeof text !== "string") return text;
   return text.replace(/[^a-zA-Z0-9 ]/g, "");
 }
+function makeTextReversed(text) {
+  if (!text || typeof text !== "string") return text;
+  return text.split("").reverse().join("");
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   makeAllLowerCase,
@@ -93,5 +98,6 @@ function makeAlphanumeric(text) {
   makeSentenceCase,
   makeSingleSpaced,
   makeSnakeCase,
+  makeTextReversed,
   makeTitleCase
 });
