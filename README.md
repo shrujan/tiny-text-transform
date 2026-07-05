@@ -129,6 +129,19 @@ Converts a string to `snake_case` (all lower case, words separated by underscore
 makeSnakeCase('my variable name'); // => 'my_variable_name'
 ```
 
+---
+
+### `makeAlphanumeric(text: string): string`
+
+Removes all non-alphanumeric characters from a string, but retains spaces. 
+
+```javascript
+makeAlphanumeric('hello!@#$ world 123'); // => 'hello world 123'
+```
+If you want the visual rendering to preserve the spacing, apply white-space: pre-wrap via CSS on the element.
+
+---
+
 ## License
 
 MIT
