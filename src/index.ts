@@ -38,23 +38,33 @@ export function makeSingleSpaced(text: string) {
 export function makeKebabCase(text: string) {
   if (!text || typeof text !== 'string') return text;
 
-  return makeSingleSpaced(text).split(' ').join('-')
+  const specialCharFreeStr = makeAlphanumeric(text);
+  return makeSingleSpaced(specialCharFreeStr).split(' ').join('-')
 }
 
 export function makeKebabLowerCase(text: string) {
   if (!text || typeof text !== 'string') return text;
 
-  return makeSingleSpaced(text).toLowerCase().split(' ').join('-')
+  const specialCharFreeStr = makeAlphanumeric(text);
+  return makeSingleSpaced(specialCharFreeStr).toLowerCase().split(' ').join('-')
 }
 
 export function makePascalCase(text: string) {
   if (!text || typeof text !== 'string') return text;
 
-  return makeSingleSpaced(text).split(' ').map( str => makeFirstLetterUpper(str) ).join('')
+  const specialCharFreeStr = makeAlphanumeric(text);
+  return makeSingleSpaced(specialCharFreeStr).split(' ').map( str => makeFirstLetterUpper(str) ).join('')
 }
 
 export function makeSnakeCase(text: string) {
   if (!text || typeof text !== 'string') return text;
 
-  return makeSingleSpaced(text).split(' ').join('_');
+  const specialCharFreeStr = makeAlphanumeric(text);
+  return makeSingleSpaced(specialCharFreeStr).split(' ').join('_');
+}
+
+export function makeAlphanumeric(text: string) {
+  if (!text || typeof text !== 'string') return text;
+
+  return text.replace(/[^a-zA-Z0-9 ]/g, '');
 }

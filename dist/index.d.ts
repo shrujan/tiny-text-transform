@@ -8,5 +8,6 @@ declare function makeKebabCase(text: string): string;
 declare function makeKebabLowerCase(text: string): string;
 declare function makePascalCase(text: string): string;
 declare function makeSnakeCase(text: string): string;
+declare function makeAlphanumeric(text: string): string;
 
-export { makeAllLowerCase, makeAllUpperCase, makeFirstLetterUpper, makeKebabCase, makeKebabLowerCase, makePascalCase, makeSentenceCase, makeSingleSpaced, makeSnakeCase, makeTitleCase };
+export { makeAllLowerCase, makeAllUpperCase, makeAlphanumeric, makeFirstLetterUpper, makeKebabCase, makeKebabLowerCase, makePascalCase, makeSentenceCase, makeSingleSpaced, makeSnakeCase, makeTitleCase };

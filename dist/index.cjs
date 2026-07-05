@@ -22,6 +22,7 @@ var index_exports = {};
 __export(index_exports, {
   makeAllLowerCase: () => makeAllLowerCase,
   makeAllUpperCase: () => makeAllUpperCase,
+  makeAlphanumeric: () => makeAlphanumeric,
   makeFirstLetterUpper: () => makeFirstLetterUpper,
   makeKebabCase: () => makeKebabCase,
   makeKebabLowerCase: () => makeKebabLowerCase,
@@ -58,24 +59,33 @@ function makeSingleSpaced(text) {
 }
 function makeKebabCase(text) {
   if (!text || typeof text !== "string") return text;
-  return makeSingleSpaced(text).split(" ").join("-");
+  const specialCharFreeStr = makeAlphanumeric(text);
+  return makeSingleSpaced(specialCharFreeStr).split(" ").join("-");
 }
 function makeKebabLowerCase(text) {
   if (!text || typeof text !== "string") return text;
-  return makeSingleSpaced(text).toLowerCase().split(" ").join("-");
+  const specialCharFreeStr = makeAlphanumeric(text);
+  return makeSingleSpaced(specialCharFreeStr).toLowerCase().split(" ").join("-");
 }
 function makePascalCase(text) {
   if (!text || typeof text !== "string") return text;
-  return makeSingleSpaced(text).split(" ").map((str) => makeFirstLetterUpper(str)).join("");
+  const specialCharFreeStr = makeAlphanumeric(text);
+  return makeSingleSpaced(specialCharFreeStr).split(" ").map((str) => makeFirstLetterUpper(str)).join("");
 }
 function makeSnakeCase(text) {
   if (!text || typeof text !== "string") return text;
-  return makeSingleSpaced(text).split(" ").join("_");
+  const specialCharFreeStr = makeAlphanumeric(text);
+  return makeSingleSpaced(specialCharFreeStr).split(" ").join("_");
+}
+function makeAlphanumeric(text) {
+  if (!text || typeof text !== "string") return text;
+  return text.replace(/[^a-zA-Z0-9 ]/g, "");
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   makeAllLowerCase,
   makeAllUpperCase,
+  makeAlphanumeric,
   makeFirstLetterUpper,
   makeKebabCase,
   makeKebabLowerCase,
