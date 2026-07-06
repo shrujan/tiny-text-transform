@@ -90,7 +90,7 @@ function makeTextReversed(text) {
 }
 function makeTextEmojiFree(text) {
   if (!text || typeof text !== "string") return text;
-  return text.replace(/\p{Emoji_Presentation}|\p{Extended_Pictographic}/gu, "");
+  return makeSingleSpaced(text.replace(/\p{Emoji_Presentation}|\p{Extended_Pictographic}/gu, ""));
 }
 function checkEmoji(text) {
   if (!text || typeof text !== "string") return false;

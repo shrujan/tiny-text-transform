@@ -47,21 +47,44 @@ import {
 } from 'tiny-text-transform';
 
 const text = 'hello world. this is a test.';
+const mixedText = 'Hello World. this is a TEST.';
+const textWithEmoji = "Hi there, ✅ (This is a text with a lot of Emojis ✅ to demo ✅)";
 
 console.log(makeTitleCase(text));
 // => "Hello World. This Is A Test."
 
+console.log(makeFirstLetterUpper(text));
+// => "Hello world. this is a test."
+
 console.log(makeSentenceCase(text));
 // => "Hello world. This is a test."
 
-console.log(makeKebabCase('Hello World!'));
-// => "Hello-World"
+console.log(makeAllUpperCase(text));
+// => "HELLO WORLD. THIS IS A TEST."
 
-console.log(makeKebabLowerCase('Hello World!'));
-// => "hello-world"
+console.log(makeAllLowerCase(mixedText));
+// => "hello world. this is a test."
 
-console.log(makePascalCase('hello world'));
-// => "HelloWorld"
+console.log(makeKebabCase(text));
+// => "hello-world-this-is-a-test"
+
+console.log(makeKebabLowerCase(mixedText));
+// => "hello-world-this-is-a-test"
+
+console.log(makePascalCase(text));
+// => "HelloWorldThisIsATest"
+
+console.log(makeSnakeCase(text));
+// => "hello_world_this_is_a_test"
+
+console.log(makeTextEmojiFree(textWithEmoji));
+// => "Hi there, (This is a text with a lot of Emojis to demo)"
+
+// ------------ Validation Methods ----------------
+
+console.log(checkEmoji(textWithEmoji));
+// => true
+
 ```
 
 ---
@@ -206,6 +229,30 @@ makeTextReversed('hello world');
 
 ---
 
+## `makeTextEmojiFree(text: string): string`
+
+Removes all emojis and returns a clean string.
+
+```typescript
+makeTextEmojiFree('Hi there, ✅ (This is a text with a lot of Emojis ✅ to demo✅)');
+// => "Hi there, (This is a text with a lot of Emojis to demo)"
+```
+
+---
+# Validation Functions
+## `checkEmoji(text: string): boolean`
+
+Detects if the string has an emoji and returns a boolean value.
+
+```typescript
+checkEmoji('Hi there, ✅ (This is a text with a lot of Emojis ✅ to demo✅)');
+// => true
+```
+
+---
+
+
+
 # Examples
 
 | Input | Function | Output |
@@ -222,6 +269,8 @@ makeTextReversed('hello world');
 | `My Variable Name` | `makeSnakeCase` | `My_Variable_Name` |
 | `hello!@#$ world 123` | `makeAlphanumeric` | `hello world 123` |
 | `hello world` | `makeTextReversed` | `dlrow olleh` |
+| `Hi there, ✅ (This is a text with a lot of Emojis ✅ to demo✅)` | `makeTextEmojiFree` | `Hi there, (This is a text with a lot of Emojis to demo)` |
+| `Hi there, ✅ (This is a text with a lot of Emojis ✅ to demo✅)` | `checkEmoji` | `true` |
 
 ---
 
@@ -235,4 +284,24 @@ If you find a bug or have an idea for a new text transformation, feel free to op
 
 # License
 
-MIT
+MIT License
+
+Copyright (c) 2026 Shrujan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

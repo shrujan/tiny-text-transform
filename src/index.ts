@@ -78,7 +78,7 @@ export function makeTextReversed(text: string): string {
 export function makeTextEmojiFree(text: string): string {
   if (!text || typeof text !== 'string') return text;
   
-  return text.replace(/\p{Emoji_Presentation}|\p{Extended_Pictographic}/gu, '');
+  return makeSingleSpaced(text.replace(/\p{Emoji_Presentation}|\p{Extended_Pictographic}/gu, ''));
 }
 
 
