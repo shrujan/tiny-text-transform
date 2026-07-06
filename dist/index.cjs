@@ -20,6 +20,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.ts
 var index_exports = {};
 __export(index_exports, {
+  checkEmoji: () => checkEmoji,
   makeAllLowerCase: () => makeAllLowerCase,
   makeAllUpperCase: () => makeAllUpperCase,
   makeAlphanumeric: () => makeAlphanumeric,
@@ -30,6 +31,7 @@ __export(index_exports, {
   makeSentenceCase: () => makeSentenceCase,
   makeSingleSpaced: () => makeSingleSpaced,
   makeSnakeCase: () => makeSnakeCase,
+  makeTextEmojiFree: () => makeTextEmojiFree,
   makeTextReversed: () => makeTextReversed,
   makeTitleCase: () => makeTitleCase
 });
@@ -86,8 +88,17 @@ function makeTextReversed(text) {
   if (!text || typeof text !== "string") return text;
   return text.split("").reverse().join("");
 }
+function makeTextEmojiFree(text) {
+  if (!text || typeof text !== "string") return text;
+  return text.replace(/\p{Emoji_Presentation}|\p{Extended_Pictographic}/gu, "");
+}
+function checkEmoji(text) {
+  if (!text || typeof text !== "string") return false;
+  return /\p{Emoji_Presentation}|\p{Extended_Pictographic}/u.test(text);
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
+  checkEmoji,
   makeAllLowerCase,
   makeAllUpperCase,
   makeAlphanumeric,
@@ -98,6 +109,7 @@ function makeTextReversed(text) {
   makeSentenceCase,
   makeSingleSpaced,
   makeSnakeCase,
+  makeTextEmojiFree,
   makeTextReversed,
   makeTitleCase
 });
