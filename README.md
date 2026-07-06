@@ -18,6 +18,9 @@ A tiny, zero-dependency TypeScript/JavaScript library for common text transforma
   - snake_case
   - Alphanumeric filtering
   - Text reversal
+  - Single Spaced Sentences
+  - Remove Emoji ✅
+  - Detect Emoji ✅
 
 ## Installation
 
