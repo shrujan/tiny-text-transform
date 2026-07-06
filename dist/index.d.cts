@@ -10,5 +10,7 @@ declare function makePascalCase(text: string): string;
 declare function makeSnakeCase(text: string): string;
 declare function makeAlphanumeric(text: string): string;
 declare function makeTextReversed(text: string): string;
+declare function makeTextEmojiFree(text: string): string;
+declare function checkEmoji(text: string): boolean;
 
-export { makeAllLowerCase, makeAllUpperCase, makeAlphanumeric, makeFirstLetterUpper, makeKebabCase, makeKebabLowerCase, makePascalCase, makeSentenceCase, makeSingleSpaced, makeSnakeCase, makeTextReversed, makeTitleCase };
+export { checkEmoji, makeAllLowerCase, makeAllUpperCase, makeAlphanumeric, makeFirstLetterUpper, makeKebabCase, makeKebabLowerCase, makePascalCase, makeSentenceCase, makeSingleSpaced, makeSnakeCase, makeTextEmojiFree, makeTextReversed, makeTitleCase };
