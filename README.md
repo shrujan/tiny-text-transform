@@ -42,11 +42,17 @@ Import only the functions you need.
 
 ```typescript
 import {
+  makeFirstLetterUpper,
   makeTitleCase,
   makeSentenceCase,
+  makeAllUpperCase,
+  makeAllLowerCase,
   makeKebabCase,
   makeKebabLowerCase,
-  makePascalCase
+  makePascalCase,
+  makeSnakeCase,
+  makeTextEmojiFree,
+  checkEmoji
 } from 'tiny-text-transform';
 
 const text = 'hello world. this is a test.';
