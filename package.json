@@ -27,7 +27,11 @@
     "string",
     "typescript",
     "utility",
-    "formatter"
+    "formatter",
+    "pascal case",
+    "kebab case",
+    "snake case",
+    "title case"
   ],
   "author": "shrujan shetty",
   "license": "MIT",
