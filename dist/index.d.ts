@@ -11,6 +11,7 @@ declare function makeSnakeCase(text: string): string;
 declare function makeAlphanumeric(text: string): string;
 declare function makeTextReversed(text: string): string;
 declare function makeTextEmojiFree(text: string): string;
+declare function makeKebabToPascalCase(text: string): string;
 declare function checkEmoji(text: string): boolean;
 
-export { checkEmoji, makeAllLowerCase, makeAllUpperCase, makeAlphanumeric, makeFirstLetterUpper, makeKebabCase, makeKebabLowerCase, makePascalCase, makeSentenceCase, makeSingleSpaced, makeSnakeCase, makeTextEmojiFree, makeTextReversed, makeTitleCase };
+export { checkEmoji, makeAllLowerCase, makeAllUpperCase, makeAlphanumeric, makeFirstLetterUpper, makeKebabCase, makeKebabLowerCase, makeKebabToPascalCase, makePascalCase, makeSentenceCase, makeSingleSpaced, makeSnakeCase, makeTextEmojiFree, makeTextReversed, makeTitleCase };
