@@ -85,7 +85,7 @@ export function makeKebabToPascalCase(text: string): string {
   if (!text || typeof text !== 'string') return text;
 
   text = makeAllLowerCase(text);
-  return makePascalCase(text.split('-').join(' '))
+  return makePascalCase(text.split('-').join(' '));
 }
 
 
