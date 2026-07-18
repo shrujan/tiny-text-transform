@@ -55,6 +55,11 @@ function makeTextEmojiFree(text) {
   if (!text || typeof text !== "string") return text;
   return makeSingleSpaced(text.replace(/\p{Emoji_Presentation}|\p{Extended_Pictographic}/gu, ""));
 }
+function makeKebabToPascalCase(text) {
+  if (!text || typeof text !== "string") return text;
+  text = makeAllLowerCase(text);
+  return makePascalCase(text.split("-").join(" "));
+}
 function checkEmoji(text) {
   if (!text || typeof text !== "string") return false;
   return /\p{Emoji_Presentation}|\p{Extended_Pictographic}/u.test(text);
@@ -67,6 +72,7 @@ export {
   makeFirstLetterUpper,
   makeKebabCase,
   makeKebabLowerCase,
+  makeKebabToPascalCase,
   makePascalCase,
   makeSentenceCase,
   makeSingleSpaced,

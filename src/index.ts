@@ -81,6 +81,13 @@ export function makeTextEmojiFree(text: string): string {
   return makeSingleSpaced(text.replace(/\p{Emoji_Presentation}|\p{Extended_Pictographic}/gu, ''));
 }
 
+export function makeKebabToPascalCase(text: string): string {
+  if (!text || typeof text !== 'string') return text;
+
+  text = makeAllLowerCase(text);
+  return makePascalCase(text.split('-').join(' '));
+}
+
 
 // ---------------- Validations Functions go here ----------------
 

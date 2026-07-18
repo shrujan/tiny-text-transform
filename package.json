@@ -1,7 +1,7 @@
 {
   "name": "tiny-text-transform",
   "version": "1.0.6",
-  "description": "A simple plugin to transform the text.",
+  "description": "A simple plugin to transform your text.",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
