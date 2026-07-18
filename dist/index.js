@@ -3,6 +3,10 @@ function makeFirstLetterUpper(text) {
   if (!text || typeof text !== "string") return text;
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
+function makeFirstLetterLower(text) {
+  if (!text || typeof text !== "string") return text;
+  return text.charAt(0).toLowerCase() + text.slice(1);
+}
 function makeTitleCase(text) {
   if (!text || typeof text !== "string") return text;
   return text.split(" ").map((str) => makeFirstLetterUpper(str)).join(" ");
@@ -60,6 +64,10 @@ function makeKebabToPascalCase(text) {
   text = makeAllLowerCase(text);
   return makePascalCase(text.split("-").join(" "));
 }
+function makeCamelCase(text) {
+  if (!text || typeof text !== "string") return text;
+  return makeFirstLetterLower(makePascalCase(text));
+}
 function checkEmoji(text) {
   if (!text || typeof text !== "string") return false;
   return /\p{Emoji_Presentation}|\p{Extended_Pictographic}/u.test(text);
@@ -69,6 +77,8 @@ export {
   makeAllLowerCase,
   makeAllUpperCase,
   makeAlphanumeric,
+  makeCamelCase,
+  makeFirstLetterLower,
   makeFirstLetterUpper,
   makeKebabCase,
   makeKebabLowerCase,
