@@ -24,6 +24,8 @@ __export(index_exports, {
   makeAllLowerCase: () => makeAllLowerCase,
   makeAllUpperCase: () => makeAllUpperCase,
   makeAlphanumeric: () => makeAlphanumeric,
+  makeCamelCase: () => makeCamelCase,
+  makeFirstLetterLower: () => makeFirstLetterLower,
   makeFirstLetterUpper: () => makeFirstLetterUpper,
   makeKebabCase: () => makeKebabCase,
   makeKebabLowerCase: () => makeKebabLowerCase,
@@ -40,6 +42,10 @@ module.exports = __toCommonJS(index_exports);
 function makeFirstLetterUpper(text) {
   if (!text || typeof text !== "string") return text;
   return text.charAt(0).toUpperCase() + text.slice(1);
+}
+function makeFirstLetterLower(text) {
+  if (!text || typeof text !== "string") return text;
+  return text.charAt(0).toLowerCase() + text.slice(1);
 }
 function makeTitleCase(text) {
   if (!text || typeof text !== "string") return text;
@@ -98,6 +104,10 @@ function makeKebabToPascalCase(text) {
   text = makeAllLowerCase(text);
   return makePascalCase(text.split("-").join(" "));
 }
+function makeCamelCase(text) {
+  if (!text || typeof text !== "string") return text;
+  return makeFirstLetterLower(makePascalCase(text));
+}
 function checkEmoji(text) {
   if (!text || typeof text !== "string") return false;
   return /\p{Emoji_Presentation}|\p{Extended_Pictographic}/u.test(text);
@@ -108,6 +118,8 @@ function checkEmoji(text) {
   makeAllLowerCase,
   makeAllUpperCase,
   makeAlphanumeric,
+  makeCamelCase,
+  makeFirstLetterLower,
   makeFirstLetterUpper,
   makeKebabCase,
   makeKebabLowerCase,

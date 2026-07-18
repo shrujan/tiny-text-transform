@@ -5,6 +5,12 @@ export function makeFirstLetterUpper(text: string): string {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
+export function makeFirstLetterLower(text: string): string {
+  if (!text || typeof text !== 'string') return text;
+
+  return text.charAt(0).toLowerCase() + text.slice(1);
+}
+
 export function makeTitleCase(text: string): string {
   if (!text || typeof text !== 'string') return text;
 
@@ -88,6 +94,11 @@ export function makeKebabToPascalCase(text: string): string {
   return makePascalCase(text.split('-').join(' '));
 }
 
+export function makeCamelCase(text: string): string {
+  if (!text || typeof text !== 'string') return text;
+
+  return makeFirstLetterLower(makePascalCase(text));
+}
 
 // ---------------- Validations Functions go here ----------------
 

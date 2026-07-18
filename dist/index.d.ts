@@ -1,4 +1,5 @@
 declare function makeFirstLetterUpper(text: string): string;
+declare function makeFirstLetterLower(text: string): string;
 declare function makeTitleCase(text: string): string;
 declare function makeSentenceCase(text: string): string;
 declare function makeAllUpperCase(text: string): string;
@@ -12,6 +13,7 @@ declare function makeAlphanumeric(text: string): string;
 declare function makeTextReversed(text: string): string;
 declare function makeTextEmojiFree(text: string): string;
 declare function makeKebabToPascalCase(text: string): string;
+declare function makeCamelCase(text: string): string;
 declare function checkEmoji(text: string): boolean;
 
-export { checkEmoji, makeAllLowerCase, makeAllUpperCase, makeAlphanumeric, makeFirstLetterUpper, makeKebabCase, makeKebabLowerCase, makeKebabToPascalCase, makePascalCase, makeSentenceCase, makeSingleSpaced, makeSnakeCase, makeTextEmojiFree, makeTextReversed, makeTitleCase };
+export { checkEmoji, makeAllLowerCase, makeAllUpperCase, makeAlphanumeric, makeCamelCase, makeFirstLetterLower, makeFirstLetterUpper, makeKebabCase, makeKebabLowerCase, makeKebabToPascalCase, makePascalCase, makeSentenceCase, makeSingleSpaced, makeSnakeCase, makeTextEmojiFree, makeTextReversed, makeTitleCase };
