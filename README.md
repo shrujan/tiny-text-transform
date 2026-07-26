@@ -295,7 +295,7 @@ If you find a bug or have an idea for a new text transformation, feel free to op
 
 MIT License
 
-Copyright (c) 2026 Shrujan
+Copyright (c) 2026 Shrujan.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
